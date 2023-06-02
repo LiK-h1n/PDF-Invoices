@@ -17,10 +17,8 @@ for filepath in filepaths:
     pdf.cell(50, 12, ln=1)
 
     df = read_excel(filepath, "Sheet 1")
-    headings = [
-        heading.replace("_", " ").title().replace("Per", "per").replace("Purchased", "")
-        for heading in df.columns
-    ]
+    headings = [heading.replace("_", " ").title().replace("Per", "per").replace("Purchased", "")
+                for heading in df.columns]
 
     pdf.set_font("Times", "B", 12)
     for heading in headings:
